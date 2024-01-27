@@ -15,7 +15,7 @@ class AppText {
   //
   static TextStyle bodyLarge = GoogleFonts.poppins(
     fontWeight: FontWeight.bold,
-    fontSize: 22.sp,
+    fontSize: 24.sp,
   );
 
   static TextStyle bodyMedium = GoogleFonts.poppins(
@@ -24,7 +24,7 @@ class AppText {
   );
   static TextStyle bodySmall = GoogleFonts.poppins(
     fontWeight: FontWeight.bold,
-    fontSize: 14.sp,
+    fontSize: 12.sp,
   );
 
 //

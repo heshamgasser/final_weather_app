@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:weather_app/views/search_view.dart';
+import 'package:weather_app/views/waether_data_ui.dart';
+import 'package:weather_app/views/widgets/no_weathe_data.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String routeName = 'Home Screen';
@@ -21,18 +23,7 @@ class HomeScreen extends StatelessWidget {
         ],
 
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'There is No Weather 😔 Start Searching Now 🔍',
-              style: Theme.of(context).textTheme.bodyLarge,
-            )
-          ],
-        ),
-      ),
+      body: WeatherDataUI(),
     );
   }
 }
