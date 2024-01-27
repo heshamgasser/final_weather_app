@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:weather_app/layout/home.dart';
-import 'package:weather_app/styles/app_theme.dart';
+import 'package:weather_app/shared/styles/app_theme.dart';
+
 import 'package:weather_app/views/search_view.dart';
 
 void main (){
