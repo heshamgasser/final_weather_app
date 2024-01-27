@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:weather_app/style/app_color.dart';
-import 'package:weather_app/style/app_theme.dart';
+
+import 'app_colors.dart';
+import 'app_text.dart';
+
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
