@@ -26,8 +26,7 @@ class SearchCity extends StatelessWidget {
     return TextFormField(
       // controller: controller,
       onFieldSubmitted: (value) async {
-       WeatherDataModel weatherDataModel = await ApiManager(dio: Dio()).getWeatherData(value);
-       Navigator.popAndPushNamed(context, HomeScreen.routeName, arguments: weatherDataModel);
+
       },
       style: Theme.of(context).textTheme.bodyMedium,
       decoration: InputDecoration(
