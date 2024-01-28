@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'app_colors.dart';
 import 'app_text.dart';
-
 
 class AppTheme {
   static ThemeData lightTheme = ThemeData(
@@ -19,7 +19,7 @@ class AppTheme {
         color: AppColors.appBarColor),
     iconButtonTheme: IconButtonThemeData(
       style:
-      IconButton.styleFrom(foregroundColor: Colors.white, iconSize: 30.r),
+          IconButton.styleFrom(foregroundColor: Colors.white, iconSize: 30.r),
     ),
     iconTheme: IconThemeData(
       size: 30.r,

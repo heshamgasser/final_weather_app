@@ -1,5 +1,6 @@
 // import 'package:dio/dio.dart';
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
@@ -50,6 +51,40 @@ class GetWeatherCubit extends Cubit<GetWeatherStates> {
       emit(GetWeatherSuccessState());
     } catch (error) {
       emit(GetWeatherFailureState(error.toString()));
+    }
+  }
+
+  MaterialColor getWeatherColor({required String weatherCondition}) {
+    if (weatherCondition == 'Sunny') {
+      return Colors.orange;
+    } else if (weatherCondition == 'Clear') {
+      return Colors.orange;
+    } else if (weatherCondition == 'Partly cloudy') {
+      return Colors.grey;
+    } else if (weatherCondition == 'Cloudy') {
+      return Colors.grey;
+    } else if (weatherCondition == 'Overcast') {
+      return Colors.grey;
+    } else if (weatherCondition == 'Mist') {
+      return Colors.blueGrey;
+    } else if (weatherCondition == 'Patchy rain possible') {
+      return Colors.blueGrey;
+    } else if (weatherCondition == 'Patchy snow possible') {
+      return Colors.deepPurple;
+    } else if (weatherCondition == 'Patchy sleet possible') {
+      return Colors.deepPurple;
+    } else if (weatherCondition == 'Patchy freezing drizzle possible') {
+      return Colors.lightBlue;
+    } else if (weatherCondition == 'Thundery outbreaks possible') {
+      return Colors.grey;
+    } else if (weatherCondition == 'Blowing snow') {
+      return Colors.lime;
+    } else if (weatherCondition == 'Blizzard') {
+      return Colors.deepOrange;
+    } else if (weatherCondition == 'Blizzard') {
+      return Colors.deepOrange;
+    } else {
+      return Colors.blue;
     }
   }
 }
