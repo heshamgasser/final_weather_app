@@ -23,13 +23,13 @@ class WeatherDataModel {
           name: json['location']['name'],
           country: json['location']['country'],
           last_updated: json['current']['last_updated'],
-          temp_c: json['current']['temp_c'],
+          temp_c:
+              json['forecast']['forecastday'][0]['day']['avgtemp_c'].toString(),
           conditionText: json['current']['condition']['text'],
           conditionIcon: json['current']['condition']['icon'],
-          maxtemp_c: json['forecast']['forecastday']['day']['maxtemp_c'],
-          mintemp_c: json['forecast']['forecastday']['day']['mintemp_c'],
+          maxtemp_c:
+              json['forecast']['forecastday'][0]['day']['maxtemp_c'].toString(),
+          mintemp_c:
+              json['forecast']['forecastday'][0]['day']['mintemp_c'].toString(),
         );
-
-
-
 }

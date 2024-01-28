@@ -1,32 +1,29 @@
-import 'dart:math';
-
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:weather_app/cubits/get_weather_cubit/cubit/get_weather_cubit.dart';
 import 'package:weather_app/layout/home.dart';
-import 'package:weather_app/models/waether_data_model.dart';
-import 'package:weather_app/shared/network/api_manager.dart';
-import 'package:weather_app/views/waether_data_ui.dart';
 
 class SearchCity extends StatelessWidget {
   // TextEditingController controller;
   String hintText;
   String labelText;
 
-
   SearchCity({
     // required this.controller,
     required this.hintText,
     required this.labelText,
-
   });
 
   @override
   Widget build(BuildContext context) {
+    var bloc = BlocProvider.of<GetWeatherCubit>(context);
+
     return TextFormField(
       // controller: controller,
-      onFieldSubmitted: (value) async {
-
+      onFieldSubmitted: (value) {
+        bloc.getWeatherData(value);
+        Navigator.popAndPushNamed(context, HomeScreen.routeName);
       },
       style: Theme.of(context).textTheme.bodyMedium,
       decoration: InputDecoration(
@@ -52,13 +49,14 @@ class SearchCity extends StatelessWidget {
           color: Colors.black,
         ),
         suffixIcon: IconButton(
-            onPressed: () async {
-              // WeatherDataModel weatherDataModel =
-              //     await ApiManager.getWeatherData(controller.text);
-              // Navigator.pushReplacementNamed(context, HomeScreen.routeName,
-              //     arguments: weatherDataModel);
-            },
-            icon: Icon(Icons.search)),
+          onPressed: () async {
+            // WeatherDataModel weatherDataModel =
+            //     await ApiManager.getWeatherData(controller.text);
+            // Navigator.pushReplacementNamed(context, HomeScreen.routeName,
+            //     arguments: weatherDataModel);
+          },
+          icon: Icon(Icons.search),
+        ),
         hintText: hintText,
         labelText: labelText,
         hintStyle: Theme.of(context).textTheme.labelSmall,
