@@ -16,7 +16,6 @@ class ApiManager {
 
     try {
       Response response = await dio.get(
-        // 'https://api.weatherapi.com/v1/forecast.json?key=85b3d20110c140d6ad0100641230803&q=London}'
         '$BASEURL$forecastEndpoint',
         queryParameters: {'key': APIKEY, 'q': cityName},
       );

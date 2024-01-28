@@ -5,7 +5,6 @@ import 'package:weather_app/cubits/get_weather_cubit/cubit/get_weather_cubit.dar
 import 'package:weather_app/layout/home.dart';
 import 'package:weather_app/shared/styles/app_theme.dart';
 import 'package:weather_app/views/search_view.dart';
-
 import 'bloc_observer/observer.dart';
 
 void main() {

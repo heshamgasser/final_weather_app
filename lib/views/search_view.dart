@@ -8,8 +8,6 @@ class SearchScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TextEditingController controller = TextEditingController();
-
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -29,10 +27,7 @@ class SearchScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SearchCity(
-
-                // controller: controller,
-                hintText: 'Enter City Name',
-                labelText: 'Enter City Name'),
+                hintText: 'Enter City Name', labelText: 'Enter City Name'),
           ],
         ),
       ),

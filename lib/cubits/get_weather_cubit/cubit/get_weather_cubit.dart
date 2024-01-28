@@ -5,7 +5,6 @@ import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'package:weather_app/const/api_const.dart';
 import 'package:weather_app/cubits/get_weather_cubit/states/get_weather_states.dart';
-
 import '../../../models/waether_data_model.dart';
 
 class GetWeatherCubit extends Cubit<GetWeatherStates> {

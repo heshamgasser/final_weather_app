@@ -14,41 +14,40 @@ class HomeScreen extends StatelessWidget {
     // var args = ModalRoute.of(context)!.settings.arguments as WeatherDataModel;
 
     return Scaffold(
-        appBar: AppBar(
-          title: Text(
-            'Weather',
-            style: Theme.of(context).textTheme.titleLarge,
-          ),
-          actions: [
-            IconButton(
-              onPressed: () {
-                Navigator.pushReplacementNamed(context, SearchScreen.routeName);
-              },
-              icon: Icon(Icons.search),
-            ),
-          ],
+      appBar: AppBar(
+        title: Text(
+          'Weather',
+          style: Theme.of(context).textTheme.titleLarge,
         ),
-        body: BlocBuilder<GetWeatherCubit, GetWeatherStates>(
-          builder: (context, state) {
-            if (state is GetWeatherInitState) {
-              return NoWeatherData();
-            } else if (state is GetWeatherLoadingState) {
-              return Center(child: CircularProgressIndicator());
-            } else if (state is GetWeatherSuccessState) {
-              return WeatherDataUI();
-            } else if (state is GetWeatherFailureState) {
-              return Center(
-                child: Text(
-                  state.error,
-                  style: Theme.of(context).textTheme.bodyLarge,
-                ),
-              );
-            } else {
-              return Text('There is an Error');
-            }
-          },
-        )
-        // WeatherDataUI(args),
-        );
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, SearchScreen.routeName);
+            },
+            icon: Icon(Icons.search),
+          ),
+        ],
+      ),
+      body: BlocBuilder<GetWeatherCubit, GetWeatherStates>(
+        builder: (context, state) {
+          if (state is GetWeatherInitState) {
+            return NoWeatherData();
+          } else if (state is GetWeatherLoadingState) {
+            return Center(child: CircularProgressIndicator());
+          } else if (state is GetWeatherSuccessState) {
+            return WeatherDataUI();
+          } else if (state is GetWeatherFailureState) {
+            return Center(
+              child: Text(
+                state.error,
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+            );
+          } else {
+            return Text('There is an Error');
+          }
+        },
+      ),
+    );
   }
 }
