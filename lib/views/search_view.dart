@@ -29,7 +29,8 @@ class SearchScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SearchCity(
-                controller: controller,
+
+                // controller: controller,
                 hintText: 'Enter City Name',
                 labelText: 'Enter City Name'),
           ],
