@@ -2,11 +2,11 @@ class WeatherDataModel {
   String? name;
   String? country;
   String? last_updated;
-  String? temp_c;
+  double? temp_c;
   String? conditionText;
   String? conditionIcon;
-  String? maxtemp_c;
-  String? mintemp_c;
+  double? maxtemp_c;
+  double? mintemp_c;
 
   WeatherDataModel(
       {this.name,
@@ -23,13 +23,10 @@ class WeatherDataModel {
           name: json['location']['name'],
           country: json['location']['country'],
           last_updated: json['current']['last_updated'],
-          temp_c:
-              json['forecast']['forecastday'][0]['day']['avgtemp_c'].toString(),
+          temp_c: json['forecast']['forecastday'][0]['day']['avgtemp_c'],
           conditionText: json['current']['condition']['text'],
           conditionIcon: json['current']['condition']['icon'],
-          maxtemp_c:
-              json['forecast']['forecastday'][0]['day']['maxtemp_c'].toString(),
-          mintemp_c:
-              json['forecast']['forecastday'][0]['day']['mintemp_c'].toString(),
+          maxtemp_c: json['forecast']['forecastday'][0]['day']['maxtemp_c'],
+          mintemp_c: json['forecast']['forecastday'][0]['day']['mintemp_c'],
         );
 }

@@ -17,6 +17,11 @@ class WeatherDataUI extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
+            weatherDataModel.country ?? '',
+            style: Theme.of(context).textTheme.bodyLarge,
+          ),
+          SizedBox(height: 10.h),
+          Text(
             weatherDataModel.name ?? '',
             style: Theme.of(context).textTheme.bodyLarge,
           ),
@@ -38,19 +43,19 @@ class WeatherDataUI extends StatelessWidget {
               ),
               Spacer(),
               Text(
-                weatherDataModel.temp_c.toString(),
+                '${weatherDataModel.temp_c?.round()}' ?? '',
                 style: Theme.of(context).textTheme.bodyLarge,
               ),
               Spacer(),
               Column(
                 children: [
                   Text(
-                    "Max Temp: ${weatherDataModel.maxtemp_c}",
+                    "Max Temp: ${weatherDataModel.maxtemp_c?.round()}",
                     style: Theme.of(context).textTheme.bodySmall,
                   ),
                   SizedBox(height: 10.h),
                   Text(
-                    'Min Temp: ${weatherDataModel.mintemp_c}',
+                    'Min Temp: ${weatherDataModel.mintemp_c?.round()}',
                     style: Theme.of(context).textTheme.bodySmall,
                   ),
                 ],
